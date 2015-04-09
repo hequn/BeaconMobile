@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<!--STATUS OK-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,minimal-ui">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<title>中国电信北京研究院灯塔大数据</title>
+<meta name="keywords" content="中国电信北京研究院灯塔大数据" />
+<meta name="description" content="中国电信北京研究院灯塔大数据" />
+
+</head>
+<body>
+	<div id='__liveLayoutContainer'>
+		<div class="-live-layout-container row-fuild"
+			data-layout-seq="__component_1" data-layout-type="layoutContainer">
+			<div class="-live-layout-row" data-layout-seq="__component_2"
+				data-layout-type="layoutRow">
+				<div class="row-fluid">
+					<div class="-live-layout-column span12"
+						data-layout-seq="__component_3" data-layout-type="layoutColumn">
+						<div class="-live-page-widget">
+							<div class="loading" id="j_loading">
+								<div class="hide">
+									<img
+										src="imgs/loadingbgrd.png">
+								</div>
+								<div class="half_t">
+									<h3>
+										<span>中国电信北京研究院灯塔大数据</span>
+									</h3>								
+									<div class="percent">
+										<span id="j_percent">0</span>
+									</div>
+								</div>
+								<div class="half_b">
+									<div class="logo"></div>
+								</div>
+							</div>
+							<!-- 翻页button -->
+							<div class="j_prev">
+								<span class="arr_up_icon">向下滑动</span>
+							</div>
+							<div class="j_next">
+								<span class="arr_down_icon ">向上滑动</span>
+							</div>
+							<div class="back_tips">
+								<span>&nbsp;</span>
+							</div>
+							<aside class="media-wrap">
+								<span id="musicBtnTxt" style="display: none;">关闭</span>
+								<i id="musicBtn" class="music-btn on"></i>
+							</aside>
+							<audio src="imgs/YouGotMe.mp3" autoplay="autoplay" loop="loop" id="autoplay"></audio>
+							<div id="j_slider" class="main">
+								<!--封皮-->
+								<section class="page hide">
+									<!--封皮1-->
+									<div class="bg_layer j_preLoad"
+										style="background-image:url(imgs/1.png);" data-bg="imgs/1.png">
+										<!-- <canvas id="canvas1" height="450" width="600"></canvas> -->
+									</div>
+									<div class="p_u_1"></div>
+									<div class="p_u_1_cont">
+										<div class="p_u_1_txt">
+											<h1>海量数据，开放共赢，共同打造大数据生态圈</h1>
+											<p>CTBRI DENGTA BIGDATA</p>
+										</div>
+									</div>
+								</section>
+
+								<!--内容-->
+								<section class="page hide">
+									<div class="bg_layer j_preLoad"
+										style="background-image:url(imgs/2.png);" data-bg="imgs/2.png">
+										<div class="l_r_t ">
+											<h2>我们的资源</h2>
+											<p>
+												<span>DATA RESOURCES</span>
+											</p>
+										</div>
+									</div>
+								</section>
+								<section class="page hide">
+									<div class="bg_layer j_preLoad"
+										style="background-image:url(imgs/3.png);" data-bg="imgs/3.png">
+										<div class="l_r_b ">
+											<h2>我们的能力</h2>
+											<p>
+												<span>PLATFORM</span>
+											</p>
+										</div>
+									</div>
+								</section>
+								<section class="page hide">
+									<div class="bg_layer j_preLoad" 
+									       style="background-image:url(imgs/4.png);" data-bg="imgs/4.png">
+
+										<div class="l_b_m ">
+											<h2>我们可以做什么</h2>
+											<p>
+												<span>APPLICATIONS</span>
+											</p>
+										</div>
+
+										<!--<div style="height:85%;"><div class="pic_cont" style="background-image:url(imgs/4.png);">
+										</div></div>
+										<div class="pic_txt_cont">
+											<h2>我们可以做什么</h2>
+											<p>
+												<span>APPLICATIONS</span>
+											</p>
+										</div>-->
+									</div>
+								</section>
+
+								<!--尾页-->
+								<section class="page hide">
+									<div class="bg_layer j_preLoad"
+										style="background-image:url(imgs/5.png);"
+										data-bg="imgs/5.png">
+									</div>
+								</section>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		var preLoadNum =10;
+		
+		var audio = document.getElementById('autoplay');
+		var controller = document.getElementById('musicBtn');
+		var controllerHint = document.getElementById('musicBtnTxt');
+
+		document.getElementById('musicBtn').addEventListener('click', function() {
+
+			controllerHint.style.display = '';
+			if (audio.paused) {
+				audio.play();
+				controller.className = 'music-btn on';
+				controllerHint.innerHTML = '开始';
+			} else {
+				audio.pause();
+				controller.className = 'music-btn';
+				controllerHint.innerHTML = '关闭';
+			}
+
+			setTimeout(function() {
+				controllerHint.style.display = 'none';
+			}, 1000);
+
+		}, false);
+	</script>
+	<script src="js/zepto.js"></script>
+	<script src="js/slider.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/chart.min.js"></script>
+
+</body>
+</html>
