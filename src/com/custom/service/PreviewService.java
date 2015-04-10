@@ -24,7 +24,7 @@ import com.custom.dto.Section;
 
 public class PreviewService {
 	
-	public static void preSaveImg(List<String> picNames,String savePath,List<FileItem> fileItems) throws Exception{
+	public static void preSaveFile(List<String> fileNames,String savePath,List<FileItem> fileItems) throws Exception{
 		File f = new File(savePath);
 		if(!f.exists()) f.mkdir();
 		else {
@@ -32,22 +32,23 @@ public class PreviewService {
 				file.delete();
 			}
 		}
-		for(int i = 0;i<picNames.size();i++){
+		for(int i = 0;i<fileNames.size();i++){
 			// 上传文件
-			File uploaderFile = new File(savePath+File.separatorChar+picNames.get(i));
+			File uploaderFile = new File(savePath+File.separatorChar+fileNames.get(i));
 			fileItems.get(i).write(uploaderFile);
 		}
 	}
 
-	public static void loadParams(List<String> picNames, String contextPath,List<Section> secs, Map<String,String> params) throws Exception{
-		for(String s : picNames){
+	public static void loadParamsImg(List<String> fileNames,List<Section> secs, Map<String,String> params) throws Exception{
+		for(String s : fileNames){
+			if(s.endsWith(".mp3")||s.endsWith(".ogg")||s.endsWith(".wav")) continue;
 			Section sec = new Section();
 			for(Field f : sec.getClass().getDeclaredFields()){
 				String value = params.get(f.getName()+"-"+s);
 				Method m = sec.getClass().getMethod("set"+f.getName().toUpperCase().charAt(0)+f.getName().substring(1),String.class);
 				m.invoke(sec, value);
 			}
-			sec.setPicName(contextPath+"/customs/"+params.get("timeId")+"/"+sec.getPicName());
+			sec.setPicName("../../"+"customs/"+params.get("timeId")+"/"+sec.getPicName());
 			secs.add(sec);
 		}
 	}

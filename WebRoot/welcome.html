@@ -13,48 +13,57 @@
 
   </head>
   <body>
-    <div class="blog-masthead">
+    <div class="ctbri-masthead">
       <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">应用</a>
+        <nav class="ctbri-nav">
+          <a class="ctbri-nav-item active" href="#">应用</a>
         </nav>
       </div>
     </div>
 
     <div class="container">
       <div class="row">      
-        <div class="col-sm-8 blog-main">
-			<div class="blog-header">
-				<h1 class="blog-title">The Bootstrap Blog</h1>
-				<p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+        <div class="col-sm-8 ctbri-main">
+			<div class="ctbri-header">
+				<h1 class="ctbri-title">手机翻页展示HTML生成工具</h1>
+				<p class="lead ctbri-description">通过上传图片，动态生成可部署应用WAR包，请调整好您的图片大小、尺寸以及上传顺序。</p>
 			</div>          
-			<div class="blog-post">
+			<div class="ctbri-post">
 				<input id="inputItems" name="inputItems" type="file" multiple='true' class="file-loading"/>				
-			</div><!-- /.blog-post -->
-
+			</div><!-- /.ctbri-post -->
+			<div class="alert alert-success" style="display: none;">
+			   <a href="#" class="close" data-dismiss="alert">
+			      &times;
+			   </a>
+			   <strong>成功！</strong>操作已正确处理。
+			</div>
+			<div class="alert alert-warning" style="display: none;">
+			   <a href="#" class="close" data-dismiss="alert">
+			      &times;
+			   </a>
+			   <strong>警告！</strong>操作意外终止，请联系管理员。
+			</div>
 			  <nav>
 				<ul class="pager">
-				  <li><a onclick="preViewer();">预览</a></li>
+				  <li id="preV"><a data-toggle="popover" style="cursor: pointer;">预览</a></li>
+				  <li id="delV" style="display:none"><a onclick="delViewer();" style="cursor: pointer;">删除</a></li>
+				  <li id="conV" style="display:none"><a onclick="saveViewer();" style="cursor: pointer;">生成</a></li>
 				</ul>
 			  </nav>
+        </div><!-- /.ctbri-main -->
 
-        </div><!-- /.blog-main -->
-
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+        <div class="col-sm-3 col-sm-offset-1 ctbri-sidebar">
 			<div class="imgHolder">
 				<iframe id="inner" class="mobileIframe" src="template/demo/content.html"></iframe>
 			</div>
-        </div><!-- /.blog-sidebar -->
+        </div><!-- /.ctbri-sidebar -->
 
       </div><!-- /.row -->
 
     </div><!-- /.container -->
 
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
+    <footer class="ctbri-footer">
+      <p>CTBIGDATA内部版本</p>
     </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

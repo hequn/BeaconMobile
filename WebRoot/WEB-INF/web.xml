@@ -10,9 +10,27 @@
 		<servlet-name>ProductServlet</servlet-name>
 		<servlet-class>com.custom.action.ProductServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>SaveServlet</servlet-name>
+		<servlet-class>com.custom.action.SaveServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DeleteServlet</servlet-name>
+		<servlet-class>com.custom.action.DeleteServlet</servlet-class>
+	</servlet>
+
+
 	<servlet-mapping>
 		<servlet-name>ProductServlet</servlet-name>
 		<url-pattern>/ProductServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SaveServlet</servlet-name>
+		<url-pattern>/SaveServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteServlet</servlet-name>
+		<url-pattern>/DeleteServlet</url-pattern>
 	</servlet-mapping>
 	<filter>
 		<filter-name>encodingFilter</filter-name>

@@ -88,7 +88,7 @@ public class ProductServlet extends HttpServlet {
 			throws ServletException, IOException {
 		boolean isMultipart = ServletFileUpload.isMultipartContent(request);
 		List<Section> secs = new ArrayList<Section>();
-		List<String> picNames = new ArrayList<String>();
+		List<String> fileNames = new ArrayList<String>();
 		List<FileItem> fileItems = new ArrayList<FileItem>();
 		Map<String,String> params = new HashMap<String, String>();
 		if (isMultipart) {
@@ -108,7 +108,7 @@ public class ProductServlet extends HttpServlet {
 						// 取得上传文件以后的存储路径
 						// 上传文件以后的存储路径
 						fileItems.add(item);
-						picNames.add(name);
+						fileNames.add(name);
 					}else {
 						String field = item.getFieldName();
 						String value = item.getString("UTF-8");
@@ -117,8 +117,10 @@ public class ProductServlet extends HttpServlet {
 				}
 				String path = request.getServletContext().getRealPath("customs")
 						+ File.separatorChar + params.get("timeId");
-				PreviewService.preSaveImg(picNames, path, fileItems);
-				PreviewService.loadParams(picNames,request.getContextPath(),secs,params);
+				PreviewService.preSaveFile(fileNames, path, fileItems);
+				PreviewService.loadParamsImg(fileNames,secs,params);
+				request.setAttribute("audioName", "../../"+
+						"/customs/"+params.get("timeId")+"/"+params.get("audioName"));
 				request.setAttribute("sections", secs);
 				PreviewService.preSaveHtml(path,request,response);
 				PrintWriter pw = response.getWriter();

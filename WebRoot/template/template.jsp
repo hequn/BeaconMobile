@@ -2,9 +2,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	String path = request.getContextPath();
-	String cssPath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/template/demo/css";
-	String jsPath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/template/demo/js";
-	String imgPath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/template/demo/imgs";
+	String cssPath = "../../template/demo/css";
+	String jsPath = "../../template/demo/js";
+	String imgPath = "../../template/demo/imgs";
 %>
 <!DOCTYPE html>
 <html>
@@ -62,7 +62,7 @@
 								<span id="musicBtnTxt" style="display: none;">关闭</span>
 								<i id="musicBtn" class="music-btn on"></i>
 							</aside>
-							<audio src="<%=imgPath%>/YouGotMe.mp3" autoplay="autoplay" loop="loop" id="autoplay"></audio>
+							<audio src="<c:out value="${audioName}"></c:out>" autoplay="autoplay" loop="loop" id="autoplay"></audio>
 							<div id="j_slider" class="main">
 								<c:forEach var="sec" items="${sections}" varStatus="status">
 									<section class="page hide">
@@ -82,8 +82,8 @@
 											<div class="p_u_1"></div>
 											<div class="p_u_1_cont">
 												<div class="p_u_1_txt">
-													<h1>海量数据，开放共赢，共同打造大数据生态圈</h1>
-													<p>CTBRI DENGTA BIGDATA</p>
+													<h1><c:out value="${sec.titleName}"></c:out></h1>
+													<p><c:out value="${sec.subTName}"></c:out></p>
 												</div>
 											</div>
 										</c:if>
